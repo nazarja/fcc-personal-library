@@ -1,0 +1,207 @@
+
+/************* Google Fonts  *************/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Special+Elite');
+
+
+
+/************* General  *************/
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Special Elite', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  padding: 50px 0 20px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.1em;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: .95em;
+}
+
+p {
+  font-size: 0.90em;
+}
+
+li {
+  font-size: .85em;
+  list-style-type: square;
+  line-height: 1.5em;
+}
+
+a, a:active, a:visited {
+  color: #3661A2;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+b {
+  color: #b10000;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+    word-wrap: break-word;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #dcdcdc;
+}
+
+
+/************* Inputs  *************/
+input[type="text"] {
+  background-color: #fff;
+  border: 1px solid #888;
+  border-radius: 30px;
+  height: 30px;
+  padding-left: 20px; 
+  font-family: 'Open Sans', san-serif;
+  min-width: 300px;
+  margin-top: 10px;
+}
+
+input[type="submit"], button[type="submit"], button {
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0);
+  background-color: RGB(0,120,215);
+  min-width: 100px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-family: 'Open Sans', san-serif;
+  margin-top: 15px;
+  margin-right: 25px;
+}
+
+textarea {
+  min-width: 80%;
+  min-height: 100px;
+  margin: 20px 0 5px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  padding: 10px 0 0 20px;
+  resize: vertical;
+}
+
+label {
+  margin-top: 15px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/************* Overrides  *************/
+#userstories, .userstories {
+  padding-top: 0;
+  margin-top: 30px;
+}
+
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 49%;
+  vertical-align: top;
+}
+
+#sampleui {
+  background-color: #dcdcdc;
+  padding: 50px;
+  margin: 20px 0 40px;
+  border-radius: 10px;
+}
+
+#sampleposting {
+  background-color: #dcdcdc;
+  padding: 50px;
+  margin: 20px 0 40px;
+  border-radius: 10px;
+}
+
+img {
+  margin-left: 60px;
+}
+
+.bookItem {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.listWrapper {
+  padding-left: 20px;
+}
+#detailComments {
+  padding-left: 20px;
+}
+.deletebook, .addcomment {
+  background-color: cornflowerblue;
+}
+
+#deleteAllBooks {
+  background-color: indianred;
+}
+
+
+
+/************* Media Quieries  *************/
+@media (max-width: 1024px) {
+  img {
+    display: flex;
+    width: 90%;
+    margin: auto;
+  }
+  .form {
+    width: 90%;
+    padding-top: 70px;
+    margin: auto;
+    display: flex;
+    align-items: inherit;
+  }
+  #newBookForm {
+    margin-top: -80px;
+  }
+  #sampleposting {
+   padding: 30px 0;
+  }
+  input[type="text"] {
+    min-width: 100%;
+  }
+  body {
+    max-width: 1100px;
+    margin: 0 15px;
+  }
+}

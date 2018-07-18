@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Personal Library</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body>
+    
+    <header>
+      <h1>Personal Library</h1>
+    </header>
+    
+    
+    <br />
+    
+    <div class="userstories">
+      <h2>A freeCodeCamp Information Security &amp; Quality Assurance Project</h2>
+        <blockquote>
+           <p>This challange makes use of NodeJS, ExpressJS, MongoDB, HelmetJS and Chai.</p>
+        </blockquote>
+    </div>
+    
+    <div id="userstories">
+      <blockquote>
+        <h2>User stories:</h2>
+        <ol>
+          <li>Nothing from my website will be cached in my client as a security measure.</li>
+          <li>I will see that the site is powered by 'PHP 4.2.0' even though it isn't as a security measure.</li>
+          <li>I can <b>post</b> a <code>title</code> to /api/books to add a book and returned will be the object with the <code>title</code> and a unique <code>_id</code>.</li>
+          <li>I can <b>get</b> /api/books to retrieve an aray of all books containing <code>title</code>, <code>_id</code>, & <code>commentcount</code>.</li>
+          <li>I can <b>get</b> /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present).</li>
+          <li>I can <b>post</b> a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to <b>get</b> /api/books/{_id}.</li>
+          <li>I can <b>delete</b> /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.</li>
+          <li>If I try to request a book that doesn't exist I will get a 'no book exists' message.</li>
+          <li>I can send a <b>delete</b> request to /api/books to delete all books in the database. Returned will be 'complete delete successful' if successful.</li>
+          <li>All 6 functional tests required are complete and passing.</li>
+        </ol>
+      </blockquote>
+      <br />
+      <img src="https://cdn.gomix.com/d7932c52-287f-4dae-b175-631fef453000%2FScreen%20Shot%202016-12-16%20at%201.35.56%20AM.png" />
+    </div>
+    
+    <h2 style="text-align: left; font-size: 1.3em;">Back-End:</h2>
+    <div id="sampleposting">
+
+      <form action="/api/books" method="post" class="form">
+        <h4>Test Post to /api/books</h4>
+        Book Title:<br />
+        <input type="text" name="title" value=""><br />
+        <input type="submit" value="Submit">
+      </form>
+      
+      <form action="" method="post" id="commentTest" class="form">
+        <h4>Test Post to /api/books/{bookid}</h4>
+        Book id to comment on:<br />
+        <input type="text" name="id" value="" id="idinputtest"><br />
+        Comment:<br />
+        <input type="text" name="comment" value=""><br />
+        <input type="submit" value="Submit">
+      </form>
+
+    </div>
+    
+    <h2 style="text-align: left; font-size: 1.3em;">Front-End:</h2>
+    <div id="sampleui">
+      
+      <!-- New Book Form -->
+      <form id="newBookForm" class="form">
+        <h4>Submit a New Book</h4>
+        New Book Title:<br />
+        <input type="text" id="bookTitleToAdd" name="title"><br />
+        <button type="submit" value="Submit" id="newBook">Submit New Book!</button>
+      </form>
+      
+      <div class="form">
+        <!-- Book Display -->
+        <h4>Books Display</h4>
+        <div id="display"></div>     
+
+        <!-- Book Details -->
+        <div id="bookDetail">
+          <p id="detailTitle">Select a book to see it's details and comments</p>
+          <ol id="detailComments"></ol>
+          <div id="detailControls"></div>
+        </div>
+
+         <!-- Delete All Books -->
+        <button id="deleteAllBooks">Delete all books...</button>
+      </div>
+      
+    </div>
+    
+    
+    
+    <!--   Footer   -->
+    <footer>
+      <p>Code and Design by <a href="http://seanmurphy.eu/" target="_blank">Sean Murphy</a></p>
+    </footer>
+    
+    
+    
+    <!--   Script  -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/public/client.js"></script>           
+    <script>
+      /*
+      *  For #sampleposting to update form action url to test inputs book id
+      */
+      $(function() {
+       $('#commentTest').submit(function(){
+         var id = $('#idinputtest').val();
+         $(this).attr('action', "/api/books/" + id);
+       });
+      });
+   </script>
+  </body>
+</html>
